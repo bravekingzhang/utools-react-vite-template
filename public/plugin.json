@@ -1,0 +1,31 @@
+{
+    "name": "utools-template",
+    "pluginName": "utools-template",
+    "author": "brzhang",
+    "homepage": "https://github.com/bravekingzhang/utools-template",
+    "description": "这是一个utools插件模板, 用于快速开发utools插件",
+    "version": "1.0.0",
+    "logo": "logo.png",
+    "main": "index.html",
+    "preload": "preload.js",
+    "platform": [
+     "win32", "darwin", "linux"
+    ],
+    "development": {
+      "main": "http://localhost:5173"
+    },
+    "pluginSetting": {
+      "height": 545,
+      "single": true
+    },
+    "features": [
+      {
+        "code": "template",
+        "mainPush": true,
+        "explain": "这是一个utools插件模板测试",
+        "cmds": [
+            "template"
+        ]
+      }
+    ]
+  }
