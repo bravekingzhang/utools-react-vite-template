@@ -1,12 +1,20 @@
 /// <reference types="vite/client" />
+
+import { ChatCompletionMessageParam } from "openai/resources/chat/completions.mjs";
 declare module "utools-api" {
   import utools from "utools-api-types";
   export = utools;
 }
-
-interface Window {
-  preload: {
-    // 增加一个异步function 的定义
-    getStreamResponseFromChatGpt(): Promise;
-  };
+declare module "openai" {
+  import openai from "openai";
+  export = openai;
+}
+declare global {
+  interface Window {
+    preload: {
+      getStreamResponseFromChatGpt(
+        message: Array<ChatCompletionMessageParam>
+      ): Promise;
+    };
+  }
 }

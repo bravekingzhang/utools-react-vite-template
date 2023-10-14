@@ -1,6 +1,7 @@
 /// <reference types="node" />
 
 import OpenAI from "openai";
+import { ChatCompletionMessageParam } from "openai/resources/chat/completions.mjs";
 
 const openai = new OpenAI({
   apiKey: "pk-this-is-a-real-free-pool-token-for-everyone",
@@ -8,16 +9,12 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true,
 });
 
-export async function getStreamResponseFromChatGpt() {
+export async function getStreamResponseFromChatGpt(
+  messages: Array<ChatCompletionMessageParam>
+) {
   const stream = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
-    messages: [
-      {
-        role: "system",
-        content: "你是一个前端研发工程师，你会编写优秀的程序1",
-      },
-      { role: "user", content: "请你帮我写一个快速排序" },
-    ],
+    messages,
     stream: true,
   });
   return stream;
