@@ -9,6 +9,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import NotFoundPage from "./pages/404";
+import WechatArticleWriter from "./pages/WechatArticleWriter";
 import "./App.css";
 const MenuItem = Menu.Item;
 const SubMenu = Menu.SubMenu;
@@ -99,6 +100,10 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<Home></Home>} />
+          <Route
+            path="/wechat_article"
+            element={<WechatArticleWriter></WechatArticleWriter>}
+          />
           <Route path="/detail" element={<Detail></Detail>} />
           <Route path="/*" element={<NotFoundPage></NotFoundPage>} />
         </Routes>

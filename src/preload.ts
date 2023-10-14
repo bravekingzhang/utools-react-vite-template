@@ -10,10 +10,12 @@ const openai = new OpenAI({
 });
 
 export async function getStreamResponseFromChatGpt(
-  messages: Array<ChatCompletionMessageParam>
+  messages: Array<ChatCompletionMessageParam>,
+  temperature: number
 ) {
   const stream = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
+    temperature,
     messages,
     stream: true,
   });

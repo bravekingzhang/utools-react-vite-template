@@ -13,7 +13,8 @@ declare global {
   interface Window {
     preload: {
       getStreamResponseFromChatGpt(
-        message: Array<ChatCompletionMessageParam>
+        message: Array<ChatCompletionMessageParam>,
+        temperature: number
       ): Promise;
     };
   }
